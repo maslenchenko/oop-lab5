@@ -11,9 +11,9 @@ public class FlowerBucket {
     public void add(FlowerPack pack) {
         packs.add(pack);
         this.price += pack.getPrice();
-        if (pack.getType() == "Tulip") {
+        if (pack.getType().equals("Tulip")) {
             this.tulips += pack.getSize();
-        } else if (pack.getType() == "Rose") {
+        } else if (pack.getType().equals("Rose")) {
             this.roses += pack.getSize();
         } else {
             this.chamomiles += pack.getSize();
