@@ -2,17 +2,12 @@ package flower.store;
 
 public class FlowerPack {
     private Flower flower;
-    private int quantity = 0;
+    private int quantity;
 
     public FlowerPack() {
     }
 
     public FlowerPack(Flower flower, int quantity) {
-        this.flower = flower;
-        this.quantity = quantity;
-    }
-
-    public void set(Flower flower, int quantity) {
         this.flower = flower;
         this.quantity = quantity;
     }
