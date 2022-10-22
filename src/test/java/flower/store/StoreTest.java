@@ -30,9 +30,12 @@ public class StoreTest {
         bucketOne = new FlowerBucket();
         bucketTwo = new FlowerBucket();
         bucketThree = new FlowerBucket();
-        pckOne = new FlowerPack(tul, 10);
-        pckTwo = new FlowerPack(rose, 15);
-        pckThree = new FlowerPack(chamo, 50);
+        int prcOne = 10;
+        int prcTwo = 15;
+        int prcThree = 50;
+        pckOne = new FlowerPack(tul, prcOne);
+        pckTwo = new FlowerPack(rose, prcTwo);
+        pckThree = new FlowerPack(chamo, prcThree);
     }
 
     @Test
