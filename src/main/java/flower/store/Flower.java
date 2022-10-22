@@ -18,4 +18,12 @@ public class Flower {
     public String getColor() {
         return color.toString();
     }
+
+//    @Override
+//    public String toString() {
+//        String name = this.getColor();
+//        name += " ";
+//        name += this.getClass().getName();
+//        return name;
+//    }
 }
