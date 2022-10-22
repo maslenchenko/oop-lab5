@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Assertions;
 public class StoreTest {
     private static final Random RANDOM_GENERATOR = new Random();
     private static final int MAX_PRICE = 100;
+    private static final int PRC = 10;
+    private static final int PRCONE = 15;
+    private static final int PRCTWO = 50;
 //    private Tulip tul;
 //    private Rose rose;
 //    private Chamomile chamo;
@@ -30,12 +33,9 @@ public class StoreTest {
         bucketOne = new FlowerBucket();
         bucketTwo = new FlowerBucket();
         bucketThree = new FlowerBucket();
-        int prcOne = 10;
-        int prcTwo = 15;
-        int prcThree = 50;
-        pckOne = new FlowerPack(tul, prcOne);
-        pckTwo = new FlowerPack(rose, prcTwo);
-        pckThree = new FlowerPack(chamo, prcThree);
+        pckOne = new FlowerPack(tul, PRC);
+        pckTwo = new FlowerPack(rose, PRCONE);
+        pckThree = new FlowerPack(chamo, PRCTWO);
     }
 
     @Test
@@ -44,6 +44,7 @@ public class StoreTest {
 //        Random RANDOM_GENERATOR = new Random();
 //        int MAX_PRICE = 100;
         int price = RANDOM_GENERATOR.nextInt(MAX_PRICE);
+//        int amount = RANDOM_GENERATOR.nextInt(MAX_PRICE);
 
         Tulip tul = new Tulip();
         Chamomile chamo = new Chamomile();
@@ -65,14 +66,10 @@ public class StoreTest {
 //        FlowerPack pckOne = new FlowerPack(tul, 10);
 //        FlowerPack pckTwo = new FlowerPack(rose, 15);
 //        FlowerPack pckThree = new FlowerPack(chamo, 50);
-
-
-        int priceOne = 10;
-        int priceTwo = 15;
-        int priceThree = 50;
-        pckOne = new FlowerPack(tul, priceOne);
-        pckTwo = new FlowerPack(rose, priceTwo);
-        pckThree = new FlowerPack(chamo, priceThree);
+        
+        pckOne = new FlowerPack(tul, PRC);
+        pckTwo = new FlowerPack(rose, PRCONE);
+        pckThree = new FlowerPack(chamo, PRCTWO);
 
         bucketOne.add(pckOne);
         bucketOne.add(pckTwo);
