@@ -11,7 +11,14 @@ public class Store {
 
     public boolean search(FlowerBucket bucket) {
         for (int i = 0; i < buckets.size(); ++i) {
-            if ((buckets.get(i).getChamomiles() == bucket.getChamomiles()) && (buckets.get(i).getRoses() == bucket.getRoses()) && (buckets.get(i).getTulips() == bucket.getTulips())) {
+            Integer thisChamos = buckets.get(i).getChamomiles();
+            Integer otherChamos = bucket.getChamomiles();
+            Integer thisRoses = buckets.get(i).getRoses();
+            Integer otherRoses = bucket.getRoses();
+            Integer thisTuls = buckets.get(i).getTulips();
+            Integer otherTuls = bucket.getTulips();
+            if (thisChamos.equals(otherChamos) && thisRoses.equals(otherRoses)
+                    && thisTuls.equals(otherTuls)) {
                 buckets.remove(i);
                 return true;
             }
