@@ -8,31 +8,31 @@ import org.junit.jupiter.api.Assertions;
 public class StoreTest {
     private static final Random RANDOM_GENERATOR = new Random();
     private static final int MAX_PRICE = 100;
-    private Tulip tul;
-    private Rose rose;
-    private Chamomile chamo;
+//    private Tulip tul;
+//    private Rose rose;
+//    private Chamomile chamo;
     private Store s;
-    private FlowerBucket bucket1;
-    private FlowerBucket bucket2;
-    private FlowerBucket bucket3;
+    private FlowerBucket bucketOne;
+    private FlowerBucket bucketTwo;
+    private FlowerBucket bucketThree;
 
-    private FlowerPack p1;
-    private FlowerPack p2;
-    private FlowerPack p3;
+    private FlowerPack pckOne;
+    private FlowerPack pckTwo;
+    private FlowerPack pckThree;
 
     @BeforeEach
     public void init() {
 
-        tul = new Tulip();
-        chamo = new Chamomile();
-        rose = new Rose();
+        Tulip tul = new Tulip();
+        Chamomile chamo = new Chamomile();
+        Rose rose = new Rose();
         s = new Store();
-        bucket1 = new FlowerBucket();
-        bucket2 = new FlowerBucket();
-        bucket3 = new FlowerBucket();
-        p1 = new FlowerPack(tul, 10);
-        p2 = new FlowerPack(rose, 15);
-        p3 = new FlowerPack(chamo, 50);
+        bucketOne = new FlowerBucket();
+        bucketTwo = new FlowerBucket();
+        bucketThree = new FlowerBucket();
+        pckOne = new FlowerPack(tul, 10);
+        pckTwo = new FlowerPack(rose, 15);
+        pckThree = new FlowerPack(chamo, 50);
     }
 
     @Test
@@ -56,34 +56,38 @@ public class StoreTest {
         chamo.setColor(FlowerColor.WHITE);
 
 //        Store s = new Store();
-//        FlowerBucket bucket1 = new FlowerBucket();
-//        FlowerBucket bucket2 = new FlowerBucket();
-//        FlowerBucket bucket3 = new FlowerBucket();
-//        FlowerPack p1 = new FlowerPack(tul, 10);
-//        FlowerPack p2 = new FlowerPack(rose, 15);
-//        FlowerPack p3 = new FlowerPack(chamo, 50);
+//        FlowerBucket bucketOne = new FlowerBucket();
+//        FlowerBucket bucketTwo = new FlowerBucket();
+//        FlowerBucket bucketThree = new FlowerBucket();
+//        FlowerPack pckOne = new FlowerPack(tul, 10);
+//        FlowerPack pckTwo = new FlowerPack(rose, 15);
+//        FlowerPack pckThree = new FlowerPack(chamo, 50);
 
-        p1 = new FlowerPack(tul, 10);
-        p2 = new FlowerPack(rose, 15);
-        p3 = new FlowerPack(chamo, 50);
 
-        bucket1.add(p1);
-        bucket1.add(p2);
-        bucket2.add(p2);
-        bucket2.add(p1);
-        bucket2.add(p3);
-        bucket3.add(p3);
-        bucket3.add(p2);
+        int priceOne = 10;
+        int priceTwo = 15;
+        int priceThree = 50;
+        pckOne = new FlowerPack(tul, priceOne);
+        pckTwo = new FlowerPack(rose, priceTwo);
+        pckThree = new FlowerPack(chamo, priceThree);
 
-        s.addBucket(bucket1);
-        s.addBucket(bucket2);
-        s.addBucket(bucket3);
+        bucketOne.add(pckOne);
+        bucketOne.add(pckTwo);
+        bucketTwo.add(pckTwo);
+        bucketTwo.add(pckOne);
+        bucketTwo.add(pckThree);
+        bucketThree.add(pckThree);
+        bucketThree.add(pckTwo);
 
-        Assertions.assertEquals(true, s.search(bucket1));
-        Assertions.assertEquals(true, s.search(bucket2));
-        Assertions.assertEquals(true, s.search(bucket3));
-        Assertions.assertEquals(false, s.search(bucket1));
-        Assertions.assertEquals(false, s.search(bucket2));
-        Assertions.assertEquals(false, s.search(bucket3));
+        s.addBucket(bucketOne);
+        s.addBucket(bucketTwo);
+        s.addBucket(bucketThree);
+
+        Assertions.assertEquals(true, s.search(bucketOne));
+        Assertions.assertEquals(true, s.search(bucketTwo));
+        Assertions.assertEquals(true, s.search(bucketThree));
+        Assertions.assertEquals(false, s.search(bucketOne));
+        Assertions.assertEquals(false, s.search(bucketTwo));
+        Assertions.assertEquals(false, s.search(bucketThree));
     }
 }
